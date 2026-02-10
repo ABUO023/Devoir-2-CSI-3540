@@ -1,15 +1,8 @@
-run-cgi:
-	$(MAKE) -C cgi run
-	
-run-cgi-win:
-	$(MAKE) -C cgi run-win
-
-
-
 TOMCAT_WEBAPPS=/opt/homebrew/opt/tomcat/libexec/webapps
 WAR_NAME=calculatrice-servlet-1.0.0.war
 
-run-servlets:
+
+run:
 	mvn clean package
 	test -f target/$(WAR_NAME)
 	cp target/$(WAR_NAME) $(TOMCAT_WEBAPPS)/calculatrice-servlet.war
