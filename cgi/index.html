@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Calculator — CGI</title>
+
+        <!-- Tailwind CSS (CDN, plain HTML) -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+
+    <body class="bg-neutral-950 text-neutral-100 antialiased">
+        <!-- Page wrapper -->
+        <div class="min-h-screen flex flex-col">
+            <!-- Header -->
+            <header class="border-b border-neutral-800">
+                <div
+                    class="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div>
+                            <p
+                                class="font-semibold text-xl tracking-tight leading-none">
+                                Calculator
+                            </p>
+                            <p class="text-xs text-neutral-500 mt-1">
+                                CGI Version · Cookies for Last Access
+                            </p>
+                        </div>
+                    </div>
+
+                    <span class="text-sm text-neutral-400 hidden sm:block">
+                        CSI 3540 · Devoir 2
+                    </span>
+                </div>
+            </header>
+
+            <!-- Main -->
+            <main class="flex-1 flex items-center justify-center px-6 py-10">
+                <section class="w-full max-w-xl">
+                    <!-- Card -->
+                    <div
+                        class="rounded-3xl border border-neutral-800 bg-neutral-900/40 shadow-2xl shadow-black/40 overflow-hidden">
+                        <!-- Top display / intro -->
+                        <div class="p-6 border-b border-neutral-800">
+                            <div
+                            class="rounded-2xl bg-neutral-950 border border-neutral-800 px-5 py-5 text-center">
+
+                                <p
+                                    class="text-xs text-neutral-500 tracking-wide">
+                                    Enter two numbers and choose an operation
+                                </p>
+
+                                <p
+                                    class="mt-2 text-sm text-neutral-400 leading-relaxed">
+                                    The calculation is performed server-side by
+                                    a CGI script, and the
+                                    last access time is stored using an HTTP
+                                    cookie.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Form -->
+                        <form method="post" action="/cgi-bin/calculator.py"
+                            class="p-6">
+                            <div class="grid gap-5">
+                                <!-- Row -->
+                                <div class="grid sm:grid-cols-2 gap-4">
+                                    <!-- Number 1 -->
+                                    <div class="space-y-2">
+                                        <label for="num1"
+                                            class="text-sm text-neutral-300">
+                                            Number 1
+                                        </label>
+                                        <input
+                                            id="num1"
+                                            name="num1"
+                                            type="text"
+                                            inputmode="decimal"
+                                            placeholder="e.g. 12.5"
+                                            class="w-full rounded-2xl border border-neutral-800 bg-neutral-950 px-4 py-3 text-base text-neutral-100 placeholder:text-neutral-600 outline-none focus:ring-2 focus:ring-neutral-700"
+                                            required />
+                                    </div>
+
+                                    <!-- Number 2 -->
+                                    <div class="space-y-2">
+                                        <label for="num2"
+                                            class="text-sm text-neutral-300">
+                                            Number 2
+                                        </label>
+                                        <input
+                                            id="num2"
+                                            name="num2"
+                                            type="text"
+                                            inputmode="decimal"
+                                            placeholder="e.g. 3"
+                                            class="w-full rounded-2xl border border-neutral-800 bg-neutral-950 px-4 py-3 text-base text-neutral-100 placeholder:text-neutral-600 outline-none focus:ring-2 focus:ring-neutral-700"
+                                            required />
+                                    </div>
+                                </div>
+
+                                <!-- Operation -->
+                                <div class="space-y-2">
+                                    <label for="op"
+                                        class="text-sm text-neutral-300">
+                                        Operation
+                                    </label>
+
+                                    <div class="grid sm:grid-cols-2 gap-4">
+                                        <select
+                                            id="op"
+                                            name="op"
+                                            class="w-full rounded-2xl border border-neutral-800 bg-neutral-950 px-4 py-3 text-base text-neutral-100 outline-none focus:ring-2 focus:ring-orange-500/40"
+                                            required>
+                                            <option value="add">Addition
+                                                (+)</option>
+                                            <option value="sub">Subtraction
+                                                (−)</option>
+                                            <option value="mul">Multiplication
+                                                (×)</option>
+                                            <option value="div">Division
+                                                (÷)</option>
+                                        </select>
+
+                                        <!-- Submit -->
+                                        <button
+                                            type="submit"
+                                            class="w-full rounded-2xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-base font-semibold text-emerald-200 hover:bg-emerald-500/15 active:scale-[0.99] transition focus:outline-none focus:ring-2 focus:ring-emerald-500/40">
+                                            Calculate
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Footer note -->
+                    <p class="mt-6 text-center text-xs text-neutral-600">
+                        CGI request handled by
+                        <a href="/cgi-bin/calculator.py"
+                            class="hover:underline">
+                            <span
+                                class="text-neutral-400 inline-flex items-center gap-1 hover:underline">
+                                /cgi-bin/calculator.py
+                                <i data-lucide="arrow-up-right"
+                                    class="w-4 h-4 text-neutral-200"></i>
+                            </span>
+                        </a>
+                    </p>
+
+                </section>
+            </main>
+
+            <!-- Footer -->
+            <footer class="border-t border-neutral-800">
+                <div
+                    class="max-w-5xl mx-auto px-6 py-6 text-sm text-neutral-500 flex items-center justify-between">
+                    <span>© 2026 — CSI3540A · Calculatrice</span>
+
+                    <span class="hidden sm:inline">
+                        Contact:
+                        <a href="mailto:aditya@adityabaindur.dev"
+                            class="hover:underline ml-1 text-neutral-300">
+                            aditya@adityabaindur.dev
+                        </a>
+                    </span>
+                </div>
+            </footer>
+        </div>
+
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <script>
+            lucide.createIcons();
+        </script>
+
+    </body>
+</html>
