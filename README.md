@@ -13,15 +13,12 @@ Both versions support:
 
 ## CGI
 
-<div style="display:flex; justify-content:center;">
-  <video controls style="max-width:900px; width:100%; border-radius:12px;">
-    <source src="./assets/cgi.mp4" type="video/mp4" />
-  </video>
-</div>
+![CGI Demo](./assets/cgi.gif)
 
-<div style="display:flex; justify-content:center;">
-Demo video: <a href="./assets/cgi.mp4"> CGI Demo </a> 
-</div>
+<p align="center">
+  Demo video: <a href="./assets/cgi.mp4">CGI Demo</a>
+</p>
+
 
 ***This version uses Python CGI scripts executed by the web server.***
 
@@ -40,15 +37,11 @@ The cookie is updated on every request using the ***Set-Cookie header***.
 
 ## Java Servlets - Using Tomcat
 
-<div style="display:flex; justify-content:center;">
-  <video controls style="max-width:900px; width:100%; border-radius:12px;">
-    <source src="./assets/servlet.mp4" type="video/mp4" />
-  </video>
-</div>
+![Servlet Demo](./assets/servlet.gif)
 
-<div style="display:flex; justify-content:center;">
-Demo video: <a href="./assets/servlet.mp4"> Servlet Demo </a> 
-</div>
+<p align="center">
+  Demo video: <a href="./assets/servlet.mp4">Servlet Demo</a>
+</p>
 
 
 ***This version uses Java Servlets running on Tomcat.*** 
@@ -98,7 +91,7 @@ Once cgi is running, you can visit `http://localhost:8000/` and use the calculat
 
 ### Running Servlet
 
-Servlet uses tomcat,
+This implementation of Servlet uses Apache [Tomcat](https://tomcat.apache.org/). 
 
 ##### Requirements :
 
