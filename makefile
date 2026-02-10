@@ -6,11 +6,6 @@ run-cgi-win:
 
 
 
-TOMCAT_WEBAPPS=/opt/homebrew/opt/tomcat/libexec/webapps
-WAR_NAME=calculatrice-servlet-1.0.0.war
 
-run-servlets:
-	mvn clean package
-	test -f target/$(WAR_NAME)
-	cp target/$(WAR_NAME) $(TOMCAT_WEBAPPS)/calculatrice-servlet.war
-	catalina run
+run-ser:
+	$(MAKE) -C calculatrice-servlet run
